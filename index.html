@@ -6,21 +6,22 @@
   <title>אישור הגעה – 40 שנות נישואין</title>
   <meta name="description" content="ערב שירים לכבוד 40 שנות הנישואין של יונתן ואילנה להמן · מוצאי שבת 12.12.26 · 19:00 · מועדון כפר אביב">
   <meta property="og:title" content="40 שנות נישואין – יונתן ואילנה להמן">
-  <meta property="og:description" content="ערב שירים · מוצאי שבת 12.12.26 · 19:00 · אישור הגעה">
+  <meta property="og:description" content="ערב של מוזיקה עברית · מוצאי שבת 12.12.26 · 19:00 · אישור הגעה">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f7f6f3;
+      --bg: #f6f7f8;
       --card: #ffffff;
-      --ink: #1f2328;
-      --muted: #6b6f76;
-      --line: #e3e1dc;
-      --accent: #2f4a6d;
-      --accent-soft: rgba(47, 74, 109, .12);
-      --gold: #b8975a;
+      --ink: #1c2a4d;
+      --muted: #5d6b85;
+      --line: #dfe4ea;
+      --accent: #1c2a4d;
+      --accent-soft: rgba(91, 122, 160, .16);
+      --blue: #6f8fb5;
+      --sage: #9db08f;
       --error: #b3261e;
     }
     * { box-sizing: border-box; }
@@ -37,20 +38,22 @@
     .wrap { max-width: 480px; margin: 0 auto; }
 
     header { text-align: center; margin-bottom: 32px; }
-    .notes { color: var(--gold); font-size: 20px; letter-spacing: 12px; margin-bottom: 12px; }
+    .notes { color: var(--blue); font-size: 22px; letter-spacing: 12px; margin-bottom: 10px; }
+    .leaf { display: block; width: 72px; height: 2px; margin: 24px auto; background: var(--sage); border-radius: 2px; opacity: .7; }
     h1 {
       font-family: "Frank Ruhl Libre", serif;
-      font-weight: 700;
+      font-weight: 900;
       font-size: clamp(38px, 11vw, 52px);
       line-height: 1.1;
       margin: 0 0 10px;
     }
     .names {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--muted);
-      margin: 0 0 22px;
+      font-family: "Frank Ruhl Libre", serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
     }
+    .tagline { color: var(--muted); margin: 4px 0 0; }
     .details { margin: 0; color: var(--ink); }
     .details div + div { margin-top: 2px; }
     .details .place { color: var(--muted); }
@@ -184,7 +187,9 @@
     <header>
       <div class="notes" aria-hidden="true">♪ ♫ ♪</div>
       <h1>40 שנות נישואין</h1>
-      <p class="names">יונתן ואילנה להמן · ערב שירים</p>
+      <p class="names">יונתן ואילנה להמן</p>
+      <p class="tagline">ערב של מוזיקה עברית</p>
+      <span class="leaf" aria-hidden="true"></span>
       <div class="details">
         <div><strong>מוצאי שבת, 12.12.26 · 19:00</strong></div>
         <div class="place">מועדון כפר אביב, יישובי גדרות</div>
