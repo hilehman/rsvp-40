@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>אישור הגעה – 40 שנות נישואין</title>
+  <meta name="description" content="ערב שירי אהבה לכבוד 40 שנות הנישואין של יונתן ואילנה להמן · מוצאי שבת 12.12.26 · 19:00 · מועדון כפר אביב">
+  <meta property="og:title" content="40 שנות נישואין – יונתן ואילנה להמן">
+  <meta property="og:description" content="ערב שירי אהבה · מוצאי שבת 12.12.26 · 19:00 · נשמח לאישור הגעה">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f8efe4;
+      --card: #fffaf3;
+      --ink: #5c1a2b;
+      --ink-soft: #7d3a4b;
+      --rose: #c98a95;
+      --gold: #c49a4a;
+      --line: #e6d3c0;
+      --muted: #8a6f66;
+      --ok: #5f7a4a;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(201,138,149,.35), transparent 38%),
+        radial-gradient(circle at 100% 100%, rgba(201,138,149,.30), transparent 40%),
+        radial-gradient(circle at 100% 0%, rgba(196,154,74,.18), transparent 35%),
+        radial-gradient(circle at 0% 100%, rgba(138,154,106,.18), transparent 35%),
+        var(--paper);
+      color: var(--ink);
+      font-family: "Assistant", system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.5;
+      padding: 28px 16px 40px;
+    }
+    .wrap { max-width: 520px; margin: 0 auto; }
+
+    header { text-align: center; margin-bottom: 22px; }
+    .notes { color: var(--gold); font-size: 22px; letter-spacing: 10px; }
+    .eyebrow { font-size: 19px; color: var(--ink-soft); margin: 6px 0 0; font-weight: 600; }
+    h1 {
+      font-family: "Frank Ruhl Libre", serif;
+      font-weight: 900;
+      font-size: clamp(36px, 10vw, 50px);
+      line-height: 1.05;
+      margin: 4px 0 6px;
+    }
+    .names {
+      font-family: "Frank Ruhl Libre", serif;
+      font-weight: 700;
+      font-size: clamp(26px, 7.5vw, 34px);
+      margin: 0;
+    }
+    .details {
+      margin: 16px auto 0;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-weight: 600;
+      color: var(--ink-soft);
+    }
+    .details strong { color: var(--ink); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px 20px 24px;
+      box-shadow: 0 10px 30px -18px rgba(92,26,43,.35);
+    }
+    .card h2 {
+      font-family: "Frank Ruhl Libre", serif;
+      font-size: 24px;
+      margin: 0 0 4px;
+      text-align: center;
+    }
+    .card .sub { text-align: center; color: var(--muted); margin: 0 0 18px; }
+
+    .row { display: flex; gap: 12px; }
+    .row > .field { flex: 1; min-width: 0; }
+    .field { margin-bottom: 16px; }
+    label, .label { display: block; font-weight: 700; margin-bottom: 6px; }
+    input[type=text], textarea {
+      width: 100%;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    input[type=text]:focus, textarea:focus {
+      border-color: var(--rose);
+      box-shadow: 0 0 0 3px rgba(201,138,149,.25);
+    }
+    textarea { min-height: 84px; resize: vertical; }
+
+    .choices { display: flex; gap: 8px; }
+    .choices input { position: absolute; opacity: 0; pointer-events: none; }
+    .choices label {
+      flex: 1;
+      margin: 0;
+      text-align: center;
+      padding: 11px 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .choices input:focus-visible + label { box-shadow: 0 0 0 3px rgba(201,138,149,.35); }
+    .choices input:checked + label { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+    .stepper { display: flex; align-items: center; gap: 10px; }
+    .stepper button {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .stepper input {
+      width: 64px;
+      text-align: center;
+      font: inherit;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 7px 4px;
+      background: #fff;
+    }
+    .hidden { display: none !important; }
+    .hp { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); opacity: 0; }
+
+    .error { color: #a3243b; font-size: 15px; margin: -6px 0 12px; min-height: 0; }
+
+    .submit {
+      width: 100%;
+      font: inherit;
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--ink);
+      border: none;
+      border-radius: 12px;
+      padding: 13px;
+      cursor: pointer;
+      transition: opacity .15s;
+    }
+    .submit:disabled { opacity: .6; cursor: wait; }
+
+    .thanks { text-align: center; padding: 10px 0 4px; }
+    .thanks .big { font-size: 44px; margin-bottom: 4px; }
+    .thanks h2 { margin-bottom: 8px; }
+    .thanks p { margin: 0 0 14px; }
+    .linkbtn {
+      background: none; border: none; padding: 0;
+      font: inherit; color: var(--ink-soft);
+      text-decoration: underline; cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 22px;
+      font-family: "Frank Ruhl Libre", serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    footer small {
+      display: block;
+      font-family: "Assistant", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="notes" aria-hidden="true">♪ ♫ ♪</div>
+      <p class="eyebrow">ערב שירי אהבה</p>
+      <h1>40 שנות נישואין</h1>
+      <p class="names">יונתן ואילנה להמן</p>
+      <div class="details">
+        <div>בנר תשיעי · <strong>מוצאי שבת 12.12.26</strong></div>
+        <div>ג׳ בטבת התשפ״ז · <strong>בשעה 19:00</strong></div>
+        <div>במועדון כפר אביב (יישובי גדרות)</div>
+      </div>
+    </header>
+
+    <main class="card">
+      <form id="rsvp" novalidate>
+        <h2>אישור הגעה</h2>
+        <p class="sub">נשמח לדעת אם תהיו איתנו</p>
+
+        <div class="row">
+          <div class="field">
+            <label for="firstName">שם פרטי</label>
+            <input type="text" id="firstName" name="firstName" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="lastName">שם משפחה</label>
+            <input type="text" id="lastName" name="lastName" autocomplete="family-name" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="label" id="attLabel">האם תגיעו?</span>
+          <div class="choices" role="radiogroup" aria-labelledby="attLabel">
+            <input type="radio" id="attYes" name="attending" value="כן">
+            <label for="attYes">כן, נגיע</label>
+            <input type="radio" id="attMaybe" name="attending" value="אולי">
+            <label for="attMaybe">אולי</label>
+            <input type="radio" id="attNo" name="attending" value="לא">
+            <label for="attNo">לא נוכל</label>
+          </div>
+        </div>
+
+        <div class="field hidden" id="countField">
+          <label for="guests" id="countLabel">כמה תגיעו?</label>
+          <div class="stepper">
+            <button type="button" data-step="1" aria-label="הוספה">+</button>
+            <input type="number" id="guests" name="guests" min="1" max="30" value="2" inputmode="numeric">
+            <button type="button" data-step="-1" aria-label="הפחתה">−</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="notes">הערות <span style="font-weight:400;color:var(--muted)">(לא חובה)</span></label>
+          <textarea id="notes" name="notes" placeholder="ברכה, בקשה מיוחדת, כל מה שתרצו לספר לנו"></textarea>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">Website</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="error" id="error" role="alert"></p>
+        <button type="submit" class="submit" id="submitBtn">שליחה</button>
+      </form>
+
+      <div class="thanks hidden" id="thanks" aria-live="polite">
+        <div class="big" id="thanksIcon">🎶</div>
+        <h2 id="thanksTitle">תודה!</h2>
+        <p id="thanksText"></p>
+        <button type="button" class="linkbtn" id="again">רוצים לעדכן את התשובה?</button>
+      </div>
+    </main>
+
+    <footer>
+      מחכים לראותכם!
+      <small>באהבה, המשפחה</small>
+    </footer>
+  </div>
+
+  <script>
+    // Only needed when this page is hosted OUTSIDE Apps Script (e.g. GitHub Pages / Netlify):
+    // paste the web app URL (".../exec") here. When served by Apps Script itself, leave empty.
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby5gE3zxC0IhuT4sxHrxYXe1nsxiDnwZJkMkmHsPwS0_jtUGp_Whu6kYfJBILlh2MrW/exec';
+
+    var form = document.getElementById('rsvp');
+    var countField = document.getElementById('countField');
+    var countLabel = document.getElementById('countLabel');
+    var guests = document.getElementById('guests');
+    var errorEl = document.getElementById('error');
+    var submitBtn = document.getElementById('submitBtn');
+
+    function attendingValue() {
+      var checked = form.querySelector('input[name="attending"]:checked');
+      return checked ? checked.value : '';
+    }
+
+    form.addEventListener('change', function (e) {
+      if (e.target.name !== 'attending') return;
+      var v = attendingValue();
+      countField.classList.toggle('hidden', v === 'לא' || v === '');
+      countLabel.textContent = v === 'אולי' ? 'כמה תהיו, אם תגיעו?' : 'כמה תגיעו?';
+      errorEl.textContent = '';
+    });
+
+    document.querySelectorAll('[data-step]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var n = (parseInt(guests.value, 10) || 0) + parseInt(btn.dataset.step, 10);
+        guests.value = Math.min(30, Math.max(1, n));
+      });
+    });
+
+    function send(data) {
+      // Served by Apps Script: call the server function directly.
+      if (window.google && google.script && google.script.run) {
+        return new Promise(function (resolve, reject) {
+          google.script.run.withSuccessHandler(resolve).withFailureHandler(reject).submitRsvp(data);
+        });
+      }
+      // Hosted elsewhere: POST to the web app. text/plain avoids a CORS preflight.
+      if (SCRIPT_URL) {
+        return fetch(SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(data)
+        }).then(function (r) { return r.json(); }).then(function (res) {
+          if (!res.ok) throw new Error(res.error || 'error');
+          return res;
+        });
+      }
+      // Local preview with no backend: pretend it worked.
+      console.warn('No backend configured – preview mode, nothing was saved.', data);
+      return new Promise(function (resolve) { setTimeout(resolve, 500); });
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorEl.textContent = '';
+
+      var data = {
+        firstName: form.firstName.value.trim(),
+        lastName: form.lastName.value.trim(),
+        attending: attendingValue(),
+        guests: '',
+        notes: form.notes.value.trim(),
+        website: form.website.value
+      };
+
+      if (!data.firstName || !data.lastName) { errorEl.textContent = 'נא למלא שם פרטי ושם משפחה'; return; }
+      if (!data.attending) { errorEl.textContent = 'נא לבחור אם תגיעו'; return; }
+      if (data.attending !== 'לא') {
+        var n = parseInt(guests.value, 10);
+        if (!n || n < 1) { errorEl.textContent = 'נא לציין כמה תגיעו'; return; }
+        data.guests = n;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'שולחים…';
+
+      send(data).then(function () {
+        showThanks(data);
+      }).catch(function () {
+        errorEl.textContent = 'משהו השתבש בשליחה. נסו שוב בעוד רגע.';
+      }).finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'שליחה';
+      });
+    });
+
+    function showThanks(data) {
+      var icon = '🎶', title = 'תודה ' + data.firstName + '!', text;
+      if (data.attending === 'כן') {
+        text = 'איזה כיף! רשמנו ' + (data.guests === 1 ? 'אורח אחד' : data.guests + ' אורחים') + '. מחכים לראותכם ולשיר יחד.';
+      } else if (data.attending === 'אולי') {
+        icon = '🤞';
+        text = 'נשמח מאוד אם תצליחו להגיע. אפשר לעדכן אותנו כאן בכל רגע.';
+      } else {
+        icon = '💛';
+        text = 'תודה שעדכנתם. נתגעגע אליכם!';
+      }
+      document.getElementById('thanksIcon').textContent = icon;
+      document.getElementById('thanksTitle').textContent = title;
+      document.getElementById('thanksText').textContent = text;
+      form.classList.add('hidden');
+      document.getElementById('thanks').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.getElementById('again').addEventListener('click', function () {
+      document.getElementById('thanks').classList.add('hidden');
+      form.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
